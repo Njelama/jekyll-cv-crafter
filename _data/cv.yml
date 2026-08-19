@@ -1,6 +1,7 @@
 url: https://njelamasanga.site
 projectUrl: njelamasanga.site
 
+# leave blank fields which you don't want to fill/be displayed
 person:
   name: Njelama Sanga, PhD
   depiction: headshot.JPG
