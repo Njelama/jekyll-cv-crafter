@@ -124,9 +124,7 @@ sideProjects:
     type: site
     langs: Colloid chemistry / Water treatment
 
-earlyExperience:
-
-aeducation:
+education:
   - name: Uppsala University
     degree: PhD, Polymer Chemistry
     location: Uppsala, Sweden
