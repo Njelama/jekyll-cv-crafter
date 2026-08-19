@@ -1,79 +1,59 @@
 ---
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.data.cv.person.name }}'s CV</title>
-  <meta name="author" content="{{ site.data.cv.person.name }}" />
-  <meta name="description" content="{{ site.data.cv.person.name }}'s CV" />
-  <link rel="shortcut icon" href="/favicon.png">
+  <meta name="description" content="{{ site.data.cv.person.name }}'s CV">
   <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/cv.css" rel="stylesheet">
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="all" />
-  <link href='https://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300' rel='stylesheet' type='text/css'>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="all">
+  <link href="https://fonts.googleapis.com/css?family=Lusitana:400,700|Archivo+Black|Roboto+Slab:400,100,300" rel="stylesheet">
   <style>
-    .cv-download{margin-top:14px}.cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none;font-family:'Roboto Slab',serif}.cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}
-    .profile-photo-wrap{display:flex;justify-content:center;align-items:flex-start;padding:10px 0 5px}
-    .profile-photo{width:auto;height:260px;max-width:100%;object-fit:contain;border-radius:8px;display:block}
-    .research-interests{font-family:'Roboto Slab',serif;line-height:1.6;font-size:16px;margin-top:18px}
-    .publication-item{margin-bottom:15px;line-height:1.5}
-    .publication-item a{font-family:'Roboto Slab',serif}
-    .project-label{font-weight:bold}
-    .thesis-box,.completed-project{line-height:1.55}
-    .thesis-download{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none;font-family:'Roboto Slab',serif}
-    .thesis-download:hover{background:#5bc0de;color:#fff;text-decoration:none}
-    .project-skill{display:inline-block;margin:0 6px 6px 0;padding:3px 7px;border:1px solid #ddd;border-radius:3px;font-size:12px}
-    @media (max-width: 767px){.profile-photo{height:auto;width:180px;max-height:280px}.profile-photo-wrap{padding:0 0 20px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block;margin-top:15px}.name{text-align:center}.profession{display:block;text-align:center}.cv-download{text-align:center}.research-interests{text-align:left}}
+    .cv-download{margin-top:14px}.cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none}.cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}
+    .profile-photo-wrap{display:flex;justify-content:center;align-items:flex-start;padding:10px 0 5px}.profile-photo{width:auto;height:260px;max-width:100%;object-fit:contain;border-radius:8px;display:block}
+    .justified{text-align:justify;line-height:1.6}.publication-item,.completed-project,.thesis-box,.jd{line-height:1.55}.publication-item{margin-bottom:15px}.project-skill{display:inline-block;margin:0 6px 6px 0;padding:3px 7px;border:1px solid #ddd;border-radius:3px;font-size:12px}.thesis-link{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none}.thesis-link:hover{background:#5bc0de;color:#fff;text-decoration:none}
+    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}}
   </style>
 </head>
 <body>
-  <div class="container">
-      <div class="row header bg-gray">
-          <div class="col-xs-4">
-              <h1 class="name">{{ site.data.cv.person.name }}</h1>
-              <span class="profession">{{ site.data.cv.person.profession }}</span>
-              <div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div>
-          </div>
-
-          <div class="col-md-5 text-center profile-photo-wrap">
-              <img src="{{ '/headshot.JPG' | relative_url }}" alt="{{ site.data.cv.person.name }}'s Photo" class="img-rounded profile-photo">
-          </div>
-
-          <div class="col-xs-3">
-              <ul class="list-unstyled">
-                  {% if site.data.cv.person.citizenship %}<li><i class="fa fa-flag-o"></i> {{site.data.cv.person.citizenship}}</li>{% endif%}
-                  {% if site.data.cv.person.site %}<li><i class="fa fa-laptop"></i> <a href="https://{{ site.data.cv.person.site }}">{{ site.data.cv.person.site }}</a></li>{% endif%}
-                  {% if site.data.cv.person.github %}<li><i class="fa fa-github"></i> <a href="https://github.com{{site.data.cv.person.github}}">GitHub</a></li>{% endif%}
-                  {% if site.data.cv.person.linkedin %}<li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in{{site.data.cv.person.linkedin}}">LinkedIn</a></li>{% endif%}
-                  {% if site.data.cv.person.orcid %}<li><i class="fa fa-id-card"></i> <a href="{{ site.data.cv.person.orcid }}">ORCID</a></li>{% endif%}
-              </ul>
-          </div>
-      </div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="research-interests">{{ site.data.cv.researchInterests }}</p></div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6 pull-right"><h5 class="pull-right">{{ item.dates }}<br/>{{item.company}} <i>({{item.location}})</i></h5></div></div><div class="row"><div class="col-xs-12"><p>{{ item.summary }}</p></div></div><div class="row"><div class="col-xs-12">{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b>{% endif %}<ul>{% for itemm in item.accomplishments %}<li>{{itemm.accomplishment}}</li>{% endfor %}</ul></div></div></div>{% endfor %}</div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><span>{{ item.citation }}</span><br><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p>{{ site.data.cv.doctoralThesis.citation }}</p><p>{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-download" href="{{ site.data.cv.doctoralThesis.link }}" target="_blank" rel="noopener"><i class="fa fa-file-pdf-o"></i> Read / Download Full Thesis</a> <a class="thesis-download" href="{{ site.data.cv.doctoralThesis.repository }}" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> DiVA Record</a></div></div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Completed MSc Project</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>MSc Research Project</b> — {{ item.institution }} ({{ item.dates }})</p><p>{{ item.description }}</p><p><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
-
-    <div class="row section section-border pagebreakishere"><div class="col-xs-3"><h2>Technical skills</h2></div><div class="col-xs-9"><div class="row"><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4>{% for item in site.data.cv.technicalSkills.backend %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-flask"></i> Experimental Methods</h4>{% for item in site.data.cv.technicalSkills.frontend %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-users"></i> Core Competencies</h4>{% for item in site.data.cv.technicalSkills.other %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div></div><div><h4><i class="fa fa-check-circle"></i> Additional competencies:</h4><ul>{% for item in site.data.cv.technicalSkills.list %}<li>{{item.tr}}</li>{% endfor %}</ul></div></div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Research Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.sideProjects %}<div class="row side-project"><div class="col-xs-12"><h4 class="project-label">{% if item.type == 'github' %}<i class="fa fa-github"></i>{% elsif item.type == 'site' %}<i class="fa fa-flask"></i>{% endif %} {{item.name}}</h4><h5>{{item.langs}}</h5>{{item.description}}</div></div>{% endfor %}</div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{item.name}}</b></h4></div><div class="col-xs-12"><i class="fa fa-graduation-cap"></i> {{item.degree}} ({{item.dates}})</div><div class="col-xs-12"><a href="{{item.link}}">{{item.link}}</a>, {{item.location}}</div></div>{% endfor %}</div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Early Industry Experience</h2></div><div class="col-xs-9">{% for item in site.data.cv.earlyExperience %}<div class="jd"><h4><b>{{ item.position }}</b></h4><div>{{item.company}}, {{item.location}} <span class="pull-right">{{item.dates}}</span></div><p>{{item.summary}}</p></div>{% endfor %}</div></div>
-
-    <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
+<div class="container">
+  <div class="row header bg-gray">
+    <div class="col-xs-4">
+      <h1 class="name">{{ site.data.cv.person.name }}</h1>
+      <span class="profession">{{ site.data.cv.person.profession }}</span>
+      <div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div>
+    </div>
+    <div class="col-md-5 text-center profile-photo-wrap"><img src="{{ '/Headshot.JPG' | relative_url }}" alt="{{ site.data.cv.person.name }}'s Photo" class="img-rounded profile-photo"></div>
+    <div class="col-xs-3"><ul class="list-unstyled">
+      {% if site.data.cv.person.citizenship %}<li><i class="fa fa-flag-o"></i> {{ site.data.cv.person.citizenship }}</li>{% endif %}
+      {% if site.data.cv.person.site %}<li><i class="fa fa-laptop"></i> <a href="https://{{ site.data.cv.person.site }}">{{ site.data.cv.person.site }}</a></li>{% endif %}
+      {% if site.data.cv.person.github %}<li><i class="fa fa-github"></i> <a href="https://github.com{{ site.data.cv.person.github }}">GitHub</a></li>{% endif %}
+      {% if site.data.cv.person.linkedin %}<li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in{{ site.data.cv.person.linkedin }}">LinkedIn</a></li>{% endif %}
+      {% if site.data.cv.person.orcid %}<li><i class="fa fa-id-card"></i> <a href="{{ site.data.cv.person.orcid }}">ORCID</a></li>{% endif %}
+    </ul></div>
   </div>
-</body>
-</html>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="justified">{{ site.data.cv.researchInterests }}</p></div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6"><h5 class="pull-right">{{ item.dates }}<br>{{ item.company }} <i>({{ item.location }})</i></h5></div></div><p class="justified">{{ item.summary }}</p>{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b><ul>{% for itemm in item.accomplishments %}<li>{{ itemm.accomplishment }}</li>{% endfor %}</ul>{% endif %}</div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><p class="justified">{{ item.citation }}</p><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Completed MSc Project</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>MSc Research Project</b> — {{ item.institution }} ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Technical skills</h2></div><div class="col-xs-9"><div class="row"><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4>{% for item in site.data.cv.technicalSkills.backend %}{{ item.name }}<div class="progress"><div class="progress-bar progress-bar-success" style="width:{{ item.level }}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-flask"></i> Experimental Methods</h4>{% for item in site.data.cv.technicalSkills.frontend %}{{ item.name }}<div class="progress"><div class="progress-bar progress-bar-success" style="width:{{ item.level }}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-users"></i> Core Competencies</h4>{% for item in site.data.cv.technicalSkills.other %}{{ item.name }}<div class="progress"><div class="progress-bar progress-bar-success" style="width:{{ item.level }}%"></div></div>{% endfor %}</div></div><h4><i class="fa fa-check-circle"></i> Additional competencies</h4><ul>{% for item in site.data.cv.technicalSkills.list %}<li>{{ item.tr }}</li>{% endfor %}</ul></div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Research Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.sideProjects %}<div class="row side-project"><div class="col-xs-12"><h4><i class="fa fa-flask"></i> {{ item.name }}</h4><h5>{{ item.langs }}</h5><p class="justified">{{ item.description }}</p></div></div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Early Industry Experience</h2></div><div class="col-xs-9">{% for item in site.data.cv.earlyExperience %}<div class="jd"><h4><b>{{ item.position }}</b></h4><div>{{ item.company }}, {{ item.location }} <span class="pull-right">{{ item.dates }}</span></div><p class="justified">{{ item.summary }}</p></div>{% endfor %}</div></div>
+
+  <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
+</div>
+</body></html>
