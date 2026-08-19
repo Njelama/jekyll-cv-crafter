@@ -1,16 +1,12 @@
 url: https://njelamasanga.site
 projectUrl: njelamasanga.site
 
-# leave blank fields which you don't want to fill/be displayed
 person:
   name: Njelama Sanga, PhD
-  depiction: headshot.png
+  depiction: headshot.jpg
   profession: Polymer & Colloid Chemist
-  location: Uppsala, Sweden
   citizenship: Zambia
-  email: njelamasanga@gmail.com
   site: njelamasanga.site
-  phone: "+46 769 724 595"
   github: /Njelama
   linkedin: /njelama-sanga-phd-014b2739
   orcid: https://orcid.org/0009-0004-1665-310X
