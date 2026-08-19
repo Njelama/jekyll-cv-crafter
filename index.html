@@ -24,9 +24,10 @@
     .publication-item{margin-bottom:15px;line-height:1.5}
     .publication-item a{font-family:'Roboto Slab',serif}
     .project-label{font-weight:bold}
-    .thesis-box{line-height:1.55}
+    .thesis-box,.completed-project{line-height:1.55}
     .thesis-download{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none;font-family:'Roboto Slab',serif}
     .thesis-download:hover{background:#5bc0de;color:#fff;text-decoration:none}
+    .project-skill{display:inline-block;margin:0 6px 6px 0;padding:3px 7px;border:1px solid #ddd;border-radius:3px;font-size:12px}
     @media (max-width: 767px){.profile-photo{height:auto;width:180px;max-height:280px}.profile-photo-wrap{padding:0 0 20px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block;margin-top:15px}.name{text-align:center}.profession{display:block;text-align:center}.cv-download{text-align:center}.research-interests{text-align:left}}
   </style>
 </head>
@@ -54,16 +55,15 @@
           </div>
       </div>
 
-    <div class="row section section-border">
-      <div class="col-xs-3"><h2>Research interests</h2></div>
-      <div class="col-xs-9"><p class="research-interests">{{ site.data.cv.researchInterests }}</p></div>
-    </div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="research-interests">{{ site.data.cv.researchInterests }}</p></div></div>
 
     <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6 pull-right"><h5 class="pull-right">{{ item.dates }}<br/>{{item.company}} <i>({{item.location}})</i></h5></div></div><div class="row"><div class="col-xs-12"><p>{{ item.summary }}</p></div></div><div class="row"><div class="col-xs-12">{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b>{% endif %}<ul>{% for itemm in item.accomplishments %}<li>{{itemm.accomplishment}}</li>{% endfor %}</ul></div></div></div>{% endfor %}</div></div>
 
     <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><span>{{ item.citation }}</span><br><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
 
     <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p>{{ site.data.cv.doctoralThesis.citation }}</p><p>{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-download" href="{{ site.data.cv.doctoralThesis.link }}" target="_blank" rel="noopener"><i class="fa fa-file-pdf-o"></i> Read / Download Full Thesis</a> <a class="thesis-download" href="{{ site.data.cv.doctoralThesis.repository }}" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> DiVA Record</a></div></div></div>
+
+    <div class="row section section-border"><div class="col-xs-3"><h2>Completed MSc Project</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>MSc Research Project</b> — {{ item.institution }} ({{ item.dates }})</p><p>{{ item.description }}</p><p><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
 
     <div class="row section section-border pagebreakishere"><div class="col-xs-3"><h2>Technical skills</h2></div><div class="col-xs-9"><div class="row"><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4>{% for item in site.data.cv.technicalSkills.backend %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-flask"></i> Experimental Methods</h4>{% for item in site.data.cv.technicalSkills.frontend %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div><div class="col-xs-4"><h4 class="techSkillHeader"><i class="fa fa-users"></i> Core Competencies</h4>{% for item in site.data.cv.technicalSkills.other %}{{item.name}}<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" style="width: {{item.level}}%"></div></div>{% endfor %}</div></div><div><h4><i class="fa fa-check-circle"></i> Additional competencies:</h4><ul>{% for item in site.data.cv.technicalSkills.list %}<li>{{item.tr}}</li>{% endfor %}</ul></div></div></div>
 
