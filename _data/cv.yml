@@ -12,6 +12,9 @@ person:
   linkedin: /njelama-sanga-phd-014b2739
   orcid: https://orcid.org/0009-0004-1665-310X
 
+researchInterests: >-
+  My research focuses on PFAS, colloid and interface science, and water treatment, with a particular interest in translating physicochemical insights into practical remediation technologies. I am seeking postdoctoral and research or industry opportunities in PFAS remediation, analytical and physical chemistry, soft matter, and environmental treatment, with a long-term goal of developing an independent research programme in Zambia that connects fundamental chemistry with environmental remediation and scientific capacity building.
+
 career:
  - position: PhD Researcher, Polymer & Colloid Chemistry
    company: Uppsala University
@@ -33,13 +36,12 @@ career:
     - accomplishment: Designed and implemented two new practical chemistry modules, including experimental procedures and safety documentation.
     - accomplishment: Assessed assignments, tests, and examinations, and supported students in scientific problem-solving and technical report writing.
     - accomplishment: Selected for a competitive academic staff development pathway supporting future research and teaching capacity within the department.
- - position: Intern, Water Treatment & Production
-   company: Zambia Breweries
-   location: Zambia
-   dates: Feb 2012 – May 2012
-   summary: Supported industrial water treatment and production operations.
-   accomplishments:
-    - accomplishment: Assisted with quality checks, process monitoring, and laboratory-based testing.
+
+publications:
+  - citation: "Sanga, N.; Ahrens, L.; Rennie, A. R. Counterion influence on perfluorooctanoate micelle characteristics: Shape, size, and interactions. Colloids and Surfaces A: Physicochemical and Engineering Aspects 2025, 726, 137912."
+    link: https://doi.org/10.1016/j.colsurfa.2025.137912
+  - citation: "Sanga, N.; Croy, N.; Ahrens, L.; Welbourn, R. J. L.; Rennie, A. R. Interaction of Perfluorooctanoate and Perfluorohexanoate with Moringa oleifera Seed Protein. Langmuir 2025, 41 (25), 16500–16505."
+    link: https://doi.org/10.1021/acs.langmuir.5c01879
 
 technicalSkills:
   list:
@@ -67,16 +69,16 @@ technicalSkills:
 
 sideProjects:
   - name: PFAS remediation concept
-    description: Research-driven concept exploring adsorption-based PFAS remediation using functionalised silica and Moringa oleifera seed protein.
-    link: https://njelamasanga.site
+    description: Research-driven concept exploring adsorption-based PFAS remediation using functionalised silica and Moringa oleifera seed protein, with a focus on practical water-treatment applications.
     type: site
     langs: Colloid chemistry / Water treatment
 
-  - name: Academic website
-    description: Personal academic CV and research website.
-    link: https://njelamasanga.site
-    type: site
-    langs: Jekyll / GitHub Pages
+earlyExperience:
+  - position: Intern, Water Treatment & Production
+    company: Zambia Breweries
+    location: Zambia
+    dates: Feb 2012 – May 2012
+    summary: Supported industrial water treatment and production operations, including quality checks, process monitoring, and laboratory-based testing.
 
 education:
   - name: Uppsala University
