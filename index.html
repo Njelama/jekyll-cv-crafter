@@ -16,7 +16,17 @@
   <link href='https://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300' rel='stylesheet' type='text/css'>
-  <style>.cv-download{margin-top:14px}.cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none;font-family:'Roboto Slab',serif}.cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}</style>
+  <style>
+    .cv-download{margin-top:14px}
+    .cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none;font-family:'Roboto Slab',serif}
+    .cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}
+    .profile-photo{width:180px;height:320px;object-fit:contain;object-position:center;border-radius:8px;display:block;margin:0 auto}
+    .photo-column{padding-top:8px;padding-bottom:8px}
+    @media (max-width:767px){
+      .profile-photo{width:140px;height:auto;max-height:260px}
+      .photo-column{margin:20px 0}
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -27,8 +37,8 @@
               <div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div>
           </div>
 
-          <div class="col-md-5 text-center">
-              <img src="{{ '/headshot.jpg' | relative_url }}" height="130px" width="130px" alt="{{ site.data.cv.person.name }}'s Photo" class="img-rounded">
+          <div class="col-md-5 text-center photo-column">
+              <img src="{{ '/headshot.JPG' | relative_url }}" alt="{{ site.data.cv.person.name }}'s Photo" class="profile-photo">
           </div>
 
           <div class="col-xs-3">
