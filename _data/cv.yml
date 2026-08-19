@@ -55,10 +55,14 @@ doctoralThesis:
   description: "Doctoral research on the physicochemical properties, self-assembly, hydration and interactions of perfluorooctanoate-based PFAS surfactants, using small-angle X-ray/neutron scattering and neutron reflection, including interactions with Moringa oleifera seed protein."
 
 researchFacilities:
-  - name: "International neutron scattering facilities"
-    description: "SANS and neutron reflectometry campaigns supporting research on PFAS surfactant self-assembly, hydration and interfacial interactions."
-  - name: "X-ray scattering facilities"
-    description: "SAXS measurements and quantitative structural analysis of soft-matter and surfactant systems."
+  - name: "Rutherford Appleton Laboratory (RAL), UK"
+    description: "Neutron-scattering research at the Rutherford Appleton Laboratory, supporting structural and interfacial studies of soft-matter and surfactant systems."
+  - name: "Institut Laue-Langevin (ILL), Grenoble, France"
+    description: "Neutron-scattering research at the ILL in Grenoble, supporting studies of surfactant self-assembly, structure and interfacial interactions."
+  - name: "Neutron Scattering School, Delft, Netherlands"
+    description: "Specialised training in neutron-scattering methods, instrumentation, experimental planning, data analysis and interpretation."
+  - name: "Neutron School, J-PARC, Japan"
+    description: "Specialised training in neutron techniques, instrumentation, experimental planning and data analysis."
   - name: "Uppsala University research laboratories"
     description: "Soft-matter, colloid and interface research, including sample preparation, experimental design and data analysis."
   - name: "Ural Federal University research laboratories"
