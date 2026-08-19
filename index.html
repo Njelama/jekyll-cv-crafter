@@ -12,24 +12,25 @@
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" media="all">
   <link href="https://fonts.googleapis.com/css?family=Lusitana:400,700|Archivo+Black|Roboto+Slab:400,100,300" rel="stylesheet">
   <style>
+    :root{--bg:#fff;--text:#333;--muted:#666;--panel:#f3f3f3;--border:#ddd;--accent:#5bc0de}
+    body{background:var(--bg);color:var(--text);transition:background .25s,color .25s}
     .cv-download{margin-top:14px}.cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none}.cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}
     .profile-photo-wrap{display:flex;justify-content:center;align-items:flex-start;padding:10px 0 5px}.profile-photo{width:auto;height:260px;max-width:100%;object-fit:contain;border-radius:8px;display:block}
     .justified{text-align:justify;line-height:1.6}.publication-item,.completed-project,.thesis-box,.jd,.facility-item{line-height:1.55}.publication-item{margin-bottom:15px}
-    .project-skill,.skill-chip{display:inline-block;margin:0 6px 6px 0;padding:5px 9px;border:1px solid #d9d9d9;border-radius:4px;font-size:13px;background:#fafafa}
+    .project-skill{display:inline-block;margin:0 6px 6px 0;padding:5px 9px;border:1px solid #d9d9d9;border-radius:4px;font-size:13px;background:#fafafa}
     .thesis-link{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none}.thesis-link:hover{background:#5bc0de;color:#fff;text-decoration:none}
     .orcid-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-right:5px;border-radius:50%;background:#a6ce39;color:#fff;font-size:11px;font-weight:700;font-family:Arial,sans-serif;vertical-align:-3px;letter-spacing:-.5px}
-    .skill-group{min-height:180px;padding-right:10px}.skill-group h4{margin-bottom:10px}.skill-chips{line-height:1.9}.facility-item{padding:0 0 14px 0}.facility-item h4{margin-bottom:5px}
-    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}.skill-group{min-height:0;margin-bottom:18px}.justified{text-align:justify}}
+    .skills-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.skill-block h4{margin:0 0 9px}.skill-list{margin:0;padding-left:20px}.skill-list li{margin-bottom:7px}
+    .night-toggle{position:fixed;top:18px;right:18px;z-index:1000;border:1px solid #aaa;background:#fff;color:#333;border-radius:18px;padding:7px 12px;cursor:pointer;font-size:12px}.night-toggle i{margin-right:5px}
+    .dark-mode{--bg:#141414;--text:#e8e8e8;--muted:#bdbdbd;--panel:#202020;--border:#444}.dark-mode .bg-gray,.dark-mode .section-border{background:#202020!important;border-color:#444!important}.dark-mode a{color:#7ed7f2}.dark-mode .project-skill{background:#242424;border-color:#555;color:#eee}.dark-mode .night-toggle{background:#242424;color:#eee;border-color:#666}.dark-mode h1,.dark-mode h2,.dark-mode h3,.dark-mode h4,.dark-mode h5,.dark-mode p,.dark-mode li,.dark-mode span{color:inherit}
+    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}.skills-layout{grid-template-columns:1fr}.night-toggle{top:10px;right:10px}.justified{text-align:justify}}
   </style>
 </head>
 <body>
+<button id="nightToggle" class="night-toggle" type="button" aria-label="Toggle night mode"><i class="fa fa-moon-o"></i><span>Night mode</span></button>
 <div class="container">
   <div class="row header bg-gray">
-    <div class="col-xs-4">
-      <h1 class="name">{{ site.data.cv.person.name }}</h1>
-      <span class="profession">{{ site.data.cv.person.profession }}</span>
-      <div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div>
-    </div>
+    <div class="col-xs-4"><h1 class="name">{{ site.data.cv.person.name }}</h1><span class="profession">{{ site.data.cv.person.profession }}</span><div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div></div>
     <div class="col-md-5 text-center profile-photo-wrap"><img src="{{ '/Headshot.JPG' | relative_url }}" alt="{{ site.data.cv.person.name }}'s Photo" class="img-rounded profile-photo"></div>
     <div class="col-xs-3"><ul class="list-unstyled">
       {% if site.data.cv.person.citizenship %}<li><i class="fa fa-flag-o"></i> {{ site.data.cv.person.citizenship }}</li>{% endif %}
@@ -41,29 +42,17 @@
   </div>
 
   <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="justified">{{ site.data.cv.researchInterests }}</p></div></div>
-
-  <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6"><h5 class="pull-right">{{ item.dates }}<br>{{ item.company }} <i>({{ item.location }})</i></h5></div></div><p class="justified">{{ item.summary }}</p>{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b><ul>{% for itemm in item.accomplishments %}<li class="justified">{{ itemm.accomplishment }}</li>{% endfor %}</ul>{% endif %}</div>{% endfor %}</div></div>
-
+  <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6"><h5 class="pull-right">{{ item.dates }}<br>{{ item.company }} <i>({{ item.location }})</i></h5></div></div><p class="justified">{{ item.summary }}</p>{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b><ul>{% for itemm in item.accomplishments %}<li>{{ itemm.accomplishment }}</li>{% endfor %}</ul>{% endif %}</div>{% endfor %}</div></div>
   <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><p class="justified">{{ item.citation }}</p><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
-
   <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
-
   <div class="row section section-border"><div class="col-xs-3"><h2>Research Facilities &amp; Neutron Training</h2></div><div class="col-xs-9">{% for item in site.data.cv.researchFacilities %}<div class="facility-item"><h4><i class="fa fa-flask"></i> <b>{{ item.name }}</b></h4><p class="justified">{{ item.description }}</p></div>{% endfor %}</div></div>
-
-  <div class="row section section-border"><div class="col-xs-3"><h2>Completed MSc Project</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>MSc Research Project</b> — {{ item.institution }} ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
-
-  <div class="row section section-border"><div class="col-xs-3"><h2>Technical skills</h2></div><div class="col-xs-9"><div class="row">
-    <div class="col-xs-4 skill-group"><h4 class="techSkillHeader"><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4><div class="skill-chips">{% for item in site.data.cv.technicalSkills.backend %}<span class="skill-chip">{{ item.name }}</span>{% endfor %}</div></div>
-    <div class="col-xs-4 skill-group"><h4 class="techSkillHeader"><i class="fa fa-flask"></i> Experimental &amp; Analytical Methods</h4><div class="skill-chips">{% for item in site.data.cv.technicalSkills.frontend %}<span class="skill-chip">{{ item.name }}</span>{% endfor %}{% for item in site.data.cv.completedProjects[0].skills %}<span class="skill-chip">{{ item }}</span>{% endfor %}</div></div>
-    <div class="col-xs-4 skill-group"><h4 class="techSkillHeader"><i class="fa fa-users"></i> Core Competencies</h4><div class="skill-chips">{% for item in site.data.cv.technicalSkills.other %}<span class="skill-chip">{{ item.name }}</span>{% endfor %}</div></div>
-  </div><div><h4><i class="fa fa-check-circle"></i> Additional competencies</h4><div class="skill-chips">{% for item in site.data.cv.technicalSkills.list %}<span class="skill-chip">{{ item.tr }}</span>{% endfor %}</div></div></div></div>
-
+  <div class="row section section-border"><div class="col-xs-3"><h2>Completed Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>{{ item.institution }}</b> ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
+  <div class="row section section-border"><div class="col-xs-3"><h2>Technical Skills</h2></div><div class="col-xs-9"><div class="skills-layout"><div class="skill-block"><h4><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.backend %}<li>{{ item.name }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-flask"></i> Experimental &amp; Analytical Methods</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.frontend %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.completedProjects[0].skills %}<li>{{ item }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-users"></i> Core Competencies</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.other %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.technicalSkills.list %}<li>{{ item.tr }}</li>{% endfor %}</ul></div></div></div></div>
   <div class="row section section-border"><div class="col-xs-3"><h2>Research Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.sideProjects %}<div class="row side-project"><div class="col-xs-12"><h4><i class="fa fa-flask"></i> {{ item.name }}</h4><h5>{{ item.langs }}</h5><p class="justified">{{ item.description }}</p></div></div>{% endfor %}</div></div>
-
-  <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"> <div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
-
-  <div class="row section section-border"><div class="col-xs-3"><h2>Early Industry Experience</h2></div><div class="col-xs-9">{% for item in site.data.cv.earlyExperience %}<div class="jd"><h4><b>{{ item.position }}</b></h4><div>{{ item.company }}, {{ item.location }} <span class="pull-right">{{ item.dates }}</span></div><p class="justified">{{ item.summary }}</p></div>{% endfor %}</div></div>
-
+  <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
   <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
 </div>
+<script>
+(function(){const body=document.body,toggle=document.getElementById('nightToggle'),saved=localStorage.getItem('njelama-theme');if(saved==='dark')body.classList.add('dark-mode');function update(){const dark=body.classList.contains('dark-mode');toggle.querySelector('span').textContent=dark?'Day mode':'Night mode';toggle.querySelector('i').className=dark?'fa fa-sun-o':'fa fa-moon-o';localStorage.setItem('njelama-theme',dark?'dark':'light')}toggle.addEventListener('click',function(){body.classList.toggle('dark-mode');update()});update()})();
+</script>
 </body></html>
