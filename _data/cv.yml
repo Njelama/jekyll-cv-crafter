@@ -84,40 +84,45 @@ completedProjects:
       - "Radiometric, radiochemical and spectrometric method development"
     outcome: "The baromembrane method demonstrated the ability to concentrate the investigated elements and reduce sample volume by up to 20-fold, supporting subsequent radiometric or spectrometric analysis."
     document: ""
+  - name: "Industrial Water Treatment & Production Internship"
+    dates: "Feb 2012 – May 2012"
+    institution: "Zambia Breweries"
+    description: "Completed an industrial placement supporting water-treatment and production operations, with practical exposure to process monitoring, laboratory quality checks and routine testing of water and production-related samples."
+    skills:
+      - "Water treatment process monitoring"
+      - "Laboratory quality checks and testing"
+      - "Sample handling and preparation"
+      - "Process-oriented troubleshooting"
+    outcome: "Gained early industrial experience in a production environment, connecting laboratory measurements with routine process monitoring and quality requirements."
+    document: ""
 
 technicalSkills:
   list:
     - tr: "Colloid and interface science"
     - tr: "PFAS chemistry and surfactant self-assembly"
-    - tr: "Small-angle scattering and neutron reflectometry"
     - tr: "Experimental design, optimisation and troubleshooting"
     - tr: "Scientific writing, technical reporting and presentations"
+    - tr: "Quantitative data analysis and interpretation"
     - tr: "Undergraduate teaching and student supervision"
-    - tr: "Water sample preparation and membrane-based concentration"
-    - tr: "Mass spectrometry and conductivity measurements"
-    - tr: "Radioisotope analysis workflows and radiochemical methods"
   backend:
    - name: SasView / quantitative modelling
    - name: Data analysis
   frontend:
    - name: SANS / SAXS
    - name: Neutron reflectometry
+   - name: Mass spectrometry
+   - name: Conductivity measurements
   other:
+   - name: Reverse osmosis / baromembrane filtration
    - name: Laboratory techniques
-   - name: Teaching & supervision
+   - name: Experimental troubleshooting
+   - name: Radiochemical and spectrometric methods
 
 sideProjects:
   - name: PFAS remediation concept
     description: Research-driven concept exploring adsorption-based PFAS remediation using functionalised silica and Moringa oleifera seed protein, with a focus on practical water-treatment applications.
     type: site
     langs: Colloid chemistry / Water treatment
-
-earlyExperience:
-  - position: Intern, Water Treatment & Production
-    company: Zambia Breweries
-    location: Zambia
-    dates: Feb 2012 – May 2012
-    summary: Supported industrial water treatment and production operations, including quality checks, process monitoring, and laboratory-based testing.
 
 education:
   - name: Uppsala University
