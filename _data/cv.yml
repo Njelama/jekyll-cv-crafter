@@ -56,19 +56,17 @@ doctoralThesis:
 
 researchFacilities:
   - name: "Rutherford Appleton Laboratory (RAL), UK"
-    description: "Neutron-scattering research at the Rutherford Appleton Laboratory, including experimental work supporting structural and interfacial studies of soft-matter and surfactant systems."
+    description: "Neutron-scattering research at the Rutherford Appleton Laboratory, supporting structural and interfacial studies of soft-matter and surfactant systems."
   - name: "Institut Laue-Langevin (ILL), Grenoble, France"
     description: "Neutron-scattering research at the ILL in Grenoble, supporting studies of surfactant self-assembly, structure and interfacial interactions."
   - name: "Neutron Scattering School, Delft, Netherlands"
-    description: "Specialised neutron-scattering training focused on experimental methods, instrumentation, data analysis and interpretation."
+    description: "Specialised training in neutron-scattering methods, instrumentation, experimental planning, data analysis and interpretation."
   - name: "Neutron School, J-PARC, Japan"
-    description: "Specialised neutron-scattering training at J-PARC, developing practical knowledge of neutron techniques, instrumentation and experimental planning."
+    description: "Specialised training in neutron techniques, instrumentation, experimental planning and data analysis."
   - name: "Uppsala University research laboratories"
     description: "Soft-matter, colloid and interface research, including sample preparation, experimental design and data analysis."
   - name: "Ural Federal University research laboratories"
     description: "Reverse-osmosis/baromembrane filtration, water-sample concentration and isotope-focused analytical work."
-  - name: "University of Zambia teaching laboratories"
-    description: "Physical Chemistry and general Chemistry laboratory teaching, practical module development and laboratory safety documentation."
 
 completedProjects:
   - name: "MSc Research — Verification of a Baromembrane Method for Concentrating Water Samples"
