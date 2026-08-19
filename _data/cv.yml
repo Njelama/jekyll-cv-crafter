@@ -54,6 +54,18 @@ doctoralThesis:
   repository: https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-570586
   description: "Doctoral research on the physicochemical properties, self-assembly, hydration and interactions of perfluorooctanoate-based PFAS surfactants, using small-angle X-ray/neutron scattering and neutron reflection, including interactions with Moringa oleifera seed protein."
 
+researchFacilities:
+  - name: "International neutron scattering facilities"
+    description: "SANS and neutron reflectometry campaigns supporting research on PFAS surfactant self-assembly, hydration and interfacial interactions."
+  - name: "X-ray scattering facilities"
+    description: "SAXS measurements and quantitative structural analysis of soft-matter and surfactant systems."
+  - name: "Uppsala University research laboratories"
+    description: "Soft-matter, colloid and interface research, including sample preparation, experimental design and data analysis."
+  - name: "Ural Federal University research laboratories"
+    description: "Reverse-osmosis/baromembrane filtration, water-sample concentration and isotope-focused analytical work."
+  - name: "University of Zambia teaching laboratories"
+    description: "Physical Chemistry and general Chemistry laboratory teaching, practical module development and laboratory safety documentation."
+
 completedProjects:
   - name: "MSc Research — Verification of a Baromembrane Method for Concentrating Water Samples"
     dates: "2019–2021"
@@ -84,19 +96,13 @@ technicalSkills:
     - tr: "Radioisotope analysis workflows and radiochemical methods"
   backend:
    - name: SasView / quantitative modelling
-     level: 90
    - name: Data analysis
-     level: 95
   frontend:
    - name: SANS / SAXS
-     level: 95
    - name: Neutron reflectometry
-     level: 90
   other:
    - name: Laboratory techniques
-     level: 90
    - name: Teaching & supervision
-     level: 95
 
 sideProjects:
   - name: PFAS remediation concept
