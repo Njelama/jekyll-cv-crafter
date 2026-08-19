@@ -1,78 +1,99 @@
-url: http://streetturtle.github.io
-projectUrl: jekyl-cv-crafter
+url: https://njelamasanga.site
+projectUrl: njelamasanga.site
 
 # leave blank fields which you don't want to fill/be displayed
 person:
-  name: Michelangelo
+  name: Njelama Sanga, PhD
   depiction: headshot.png
-  profession: Teenage Mutant Ninja Turtle
-  location: sewers of New York City
-  citizenship: USA
-  email: mikey@tmnt.com
-  site: http://mikeystmnt.com
-  phone: +8-tmnt-mickey
-  github: /streetturtle
-  stackoverflow: /streetturtle
-  linkedin: /streetturtle
+  profession: Polymer & Colloid Chemist
+  location: Uppsala, Sweden
+  citizenship: Zambia
+  email: njelamasanga@gmail.com
+  site: njelamasanga.site
+  phone: "+46 769 724 595"
+  github: /Njelama
+  linkedin: /njelama-sanga-phd-014b2739
+  orcid: https://orcid.org/0009-0004-1665-310X
 
 career:
- - position: Foot Clan Antagonist
-   company: TMNT inc.
-   location: New York, USA
-   dates: September 2014 - current
-   summary: Physically the smallest of the Turtles and the least mature. Mikey is easily distracted and enthusiastic about... well, pretty much everything. He's also extremely creative. He has a thousand ideas, and every now and then, one of them will be brilliant. This combination of creativity and lack of focus gives him a kind of flow that the other Turtles cannot match. He's a social mutant and more than the others, pines to be part of the real world.
+ - position: PhD Researcher, Polymer & Colloid Chemistry
+   company: Uppsala University
+   location: Sweden
+   dates: Oct 2021 – Oct 2025
+   summary: Designed and executed a 4-year experimental research programme on PFAS surfactant self-assembly and aggregation in aqueous systems, evaluating the effects of counterions, concentration, and temperature on micellar structure and interactions.
    accomplishments:
-    - accomplishment: Mikey is the most agile of all his brothers; his training as a ninja helped to balance and improve this, but his skills in skateboarding and dancing also gives Mikey an edge that will often shock his brothers. Mikey is an extremely good fighter. He's got a great knowledge with ninjutsu, which is why he is a good fighter. He may have the most raw talent of the four, but he does not seem to have the skill to develop it.
-    - accomplishment: He refers to himself as the king of pranks. Since he the most funniest of his brothers and he hasn't shown to be wrong since he was able to show his pranking skills against his brothers like water balloons as he wants to prank them all and he was able to use his prank of water ballon to use against the tank of the truck.
- - position: Shredder enemy
-   company: TMNT
-   location: New York, USA
-   dates: October 2012 – September 2014
-   summary: Impulsive, creative and very social, Michelangelo is the heart and soul of the Ninja Turtles. The runt of the litter, he may be the smallest of his mutant brothers, but that doesn't make him the weakest (just harder to catch). Enemies beware! Michelangelo is a master of the Kusarigama, nunchucks with a secret and sharp surprise!
+    - accomplishment: Investigated interfacial interactions between fluorinated surfactants and Moringa oleifera seed protein systems using neutron reflectometry.
+    - accomplishment: Planned and coordinated 8+ experimental campaigns at international neutron scattering facilities, collaborating with multidisciplinary research teams across multiple countries.
+    - accomplishment: Performed experimental troubleshooting, uncertainty evaluation, and optimisation of measurement conditions, reducing sample preparation time by approximately 40% through workflow redesign.
+    - accomplishment: Interpreted complex experimental datasets and translated findings into scientific conclusions, technical reports, peer-reviewed publications, and conference presentations.
+ - position: Staff Development Fellow, Department of Chemistry
+   company: University of Zambia
+   location: Zambia
+   dates: Jul 2017 – Present
+   summary: On leave for doctoral studies during 2021–2025; undergraduate teaching and academic capacity development.
    accomplishments:
-    - accomplishment: Mikey's skills as a skateboarder and a ninja give him a great ability with balance.
-    - accomplishment: He has the normal ability of a turtle to go into his shell.
+    - accomplishment: Delivered laboratory demonstrations and tutorials in Physical Chemistry and first-year general chemistry to undergraduate cohorts of 120+ students.
+    - accomplishment: Designed and implemented two new practical chemistry modules, including experimental procedures and safety documentation.
+    - accomplishment: Assessed assignments, tests, and examinations, and supported students in scientific problem-solving and technical report writing.
+    - accomplishment: Selected for a competitive academic staff development pathway supporting future research and teaching capacity within the department.
+ - position: Intern, Water Treatment & Production
+   company: Zambia Breweries
+   location: Zambia
+   dates: Feb 2012 – May 2012
+   summary: Supported industrial water treatment and production operations.
+   accomplishments:
+    - accomplishment: Assisted with quality checks, process monitoring, and laboratory-based testing.
 
 technicalSkills:
   list:
-    - tr: "Impulsive, creative and very social"
-    - tr: "Heart and soul of the Ninja Turtles"
-    - tr: "Master of the Kusarigama and nunchucks"
-    - tr: "Labeled as 'The Wild One' and 'The Party Dude'"
-    - tr: "First of the turtles to taste pizza"
-    - tr: "Very proud of his talent for naming thing"
+    - tr: "Colloid and interface science"
+    - tr: "PFAS chemistry and surfactant self-assembly"
+    - tr: "Small-angle scattering and neutron reflectometry"
+    - tr: "Experimental design, optimisation and troubleshooting"
+    - tr: "Scientific writing, technical reporting and presentations"
+    - tr: "Undergraduate teaching and student supervision"
   backend:
-   - name: Ninjutsu
+   - name: SasView / quantitative modelling
      level: 90
-   - name: Kusarigama
-     level: 80
+   - name: Data analysis
+     level: 95
   frontend:
-   - name: Cooking Skills
-     level: 80
-   - name: Pranks
+   - name: SANS / SAXS
+     level: 95
+   - name: Neutron reflectometry
      level: 90
   other:
-   - name: Shadow Puppet Skill
+   - name: Laboratory techniques
      level: 90
-   - name: Teaching
-     level: 100
+   - name: Teaching & supervision
+     level: 95
 
 sideProjects:
-  - name: jekyll-clean-dark
-    description: Theme for Jekyll - static site generator. After creating theme for my blog I shared it on github.
-    link: https://github.com/streetturtle/jekyll-clean-dark
-    type: github
-    langs: HTML/CSS/Bootstrap
-
-  - name: number-writing-trainer
-    description: Application which helps with learning foreign numerals. Was created to help with learning how to write french numbers as well as to practice AngularJS.
-    link: http://pavelmakhov.com/number-writing-trainer/#/
+  - name: PFAS remediation concept
+    description: Research-driven concept exploring adsorption-based PFAS remediation using functionalised silica and Moringa oleifera seed protein.
+    link: https://njelamasanga.site
     type: site
-    langs: AngularJS/HTML/CSS/Bootstrap
+    langs: Colloid chemistry / Water treatment
+
+  - name: Academic website
+    description: Personal academic CV and research website.
+    link: https://njelamasanga.site
+    type: site
+    langs: Jekyll / GitHub Pages
 
 education:
-  - name: Master Splinter Academy
-    degree: Mutant Red-Eared Slider
-    location: sewers of New York City
-    dates: 2007 – 2012
-    link: http://tmnt2012series.wikia.com/
+  - name: Uppsala University
+    degree: PhD, Polymer Chemistry
+    location: Uppsala, Sweden
+    dates: 2021 – 2025
+    link: https://www.uu.se/
+  - name: Ural Federal University
+    degree: MSc, Nuclear Physics & Technology
+    location: Russia
+    dates: 2019 – 2021
+    link: https://urfu.ru/
+  - name: University of Zambia
+    degree: BSc, Chemistry / Physics
+    location: Zambia
+    dates: 2013 – 2016
+    link: https://www.unza.zm/
