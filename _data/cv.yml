@@ -67,8 +67,6 @@ researchFacilities:
     description: "Soft-matter, colloid and interface research, including sample preparation, experimental design and data analysis."
   - name: "Ural Federal University research laboratories"
     description: "Reverse-osmosis/baromembrane filtration, water-sample concentration and isotope-focused analytical work."
-  - name: "University of Zambia teaching laboratories"
-    description: "Physical Chemistry and general Chemistry laboratory teaching, practical module development and laboratory safety documentation."
 
 completedProjects:
   - name: "MSc Research — Verification of a Baromembrane Method for Concentrating Water Samples"
