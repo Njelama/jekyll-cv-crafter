@@ -24,7 +24,10 @@
     .skills-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.skill-block h4{margin:0 0 9px}.skill-list{margin:0;padding-left:20px}.skill-list li{margin-bottom:7px}
     .night-toggle{position:fixed;top:18px;right:18px;z-index:1000;border:1px solid #aaa;background:#fff;color:#333;border-radius:18px;padding:7px 12px;cursor:pointer;font-size:12px}.night-toggle i{margin-right:5px}
     .dark-mode{--bg:#141414;--text:#e8e8e8;--muted:#bdbdbd;--panel:#202020;--border:#444}.dark-mode .bg-gray,.dark-mode .section-border{background:#202020!important;border-color:#444!important}.dark-mode a{color:#7ed7f2}.dark-mode .project-skill{background:#242424;border-color:#555;color:#eee}.dark-mode .night-toggle{background:#242424;color:#eee;border-color:#666}.dark-mode h1,.dark-mode h2,.dark-mode h3,.dark-mode h4,.dark-mode h5,.dark-mode p,.dark-mode li,.dark-mode span{color:inherit}
-    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}.skills-layout{grid-template-columns:1fr}.night-toggle{top:10px;right:10px}.thesis-cover{width:190px}.justified{text-align:justify}}
+    .tab-nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:900;background:var(--bg)}
+    .tab-button{border:0;background:transparent;color:var(--text);padding:11px 15px;font-family:'Roboto Slab',serif;font-size:14px;border-bottom:3px solid transparent;cursor:pointer}.tab-button:hover{color:#46b8da}.tab-button.active{border-bottom-color:#5bc0de;color:#46b8da;font-weight:700}
+    .tab-panel{display:none}.tab-panel.active{display:block}.tab-intro{margin-bottom:18px}
+    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}.skills-layout{grid-template-columns:1fr}.night-toggle{top:10px;right:10px}.thesis-cover{width:190px}.justified{text-align:justify}.tab-nav{gap:2px}.tab-button{font-size:12px;padding:9px 10px}}
   </style>
 </head>
 <body>
@@ -42,17 +45,60 @@
     </ul></div>
   </div>
 
-  <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="justified">{{ site.data.cv.researchInterests }}</p></div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6"><h5 class="pull-right">{{ item.dates }}<br>{{ item.company }} <i>({{ item.location }})</i></h5></div></div><p class="justified">{{ item.summary }}</p>{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b><ul>{% for itemm in item.accomplishments %}<li>{{ itemm.accomplishment }}</li>{% endfor %}</ul>{% endif %}</div>{% endfor %}</div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><p class="justified">{{ item.citation }}</p><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><img class="thesis-cover" src="{{ '/thesis-cover-front.svg' | relative_url }}" alt="Cover of Njelama Sanga's doctoral thesis"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Research Facilities &amp; Neutron Training</h2></div><div class="col-xs-9">{% for item in site.data.cv.researchFacilities %}<div class="facility-item"><h4><i class="fa fa-flask"></i> <b>{{ item.name }}</b></h4><p class="justified">{{ item.description }}</p></div>{% endfor %}</div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Completed Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>{{ item.institution }}</b> ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Technical Skills</h2></div><div class="col-xs-9"><div class="skills-layout"><div class="skill-block"><h4><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.backend %}<li>{{ item.name }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-flask"></i> Experimental &amp; Analytical Methods</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.frontend %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.completedProjects[0].skills %}<li>{{ item }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-users"></i> Core Competencies</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.other %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.technicalSkills.list %}<li>{{ item.tr }}</li>{% endfor %}</ul></div></div></div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
-  <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
+  <nav class="tab-nav" aria-label="CV sections">
+    <button class="tab-button active" data-tab="home"><i class="fa fa-home"></i> Home</button>
+    <button class="tab-button" data-tab="research"><i class="fa fa-flask"></i> Research</button>
+    <button class="tab-button" data-tab="publications"><i class="fa fa-book"></i> Publications</button>
+    <button class="tab-button" data-tab="experience"><i class="fa fa-briefcase"></i> Experience</button>
+    <button class="tab-button" data-tab="skills"><i class="fa fa-cogs"></i> Skills</button>
+    <button class="tab-button" data-tab="education"><i class="fa fa-graduation-cap"></i> Education</button>
+  </nav>
+
+  <section class="tab-panel active" id="tab-home">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Research interests</h2></div><div class="col-xs-9"><p class="justified tab-intro">{{ site.data.cv.researchInterests }}</p></div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Research highlight</h2></div><div class="col-xs-9"><p class="justified">My doctoral research combined PFAS surfactant self-assembly, SANS/SAXS and neutron reflectometry to understand structure, hydration and interfacial interactions. This provides a foundation for developing and evaluating adsorption-based remediation concepts, including functionalised silica and natural materials, with attention to selectivity, reversibility and practical water-treatment requirements.</p></div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>What I bring</h2></div><div class="col-xs-9"><ul><li>Experimental design, optimisation and troubleshooting at large-scale research facilities.</li><li>Quantitative scattering analysis and modelling using SasView.</li><li>Water-sample concentration and analytical workflows from MSc research.</li><li>Multidisciplinary collaboration, technical reporting and scientific communication.</li></ul></div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-research">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><img class="thesis-cover" src="{{ '/thesis-cover-front.svg' | relative_url }}" alt="Cover of Njelama Sanga's doctoral thesis"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Research Facilities &amp; Neutron Training</h2></div><div class="col-xs-9">{% for item in site.data.cv.researchFacilities %}<div class="facility-item"><h4><i class="fa fa-flask"></i> <b>{{ item.name }}</b></h4><p class="justified">{{ item.description }}</p></div>{% endfor %}</div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Completed Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>{{ item.institution }}</b> ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Research Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.sideProjects %}<div class="row side-project"><div class="col-xs-12"><h4><i class="fa fa-flask"></i> {{ item.name }}</h4><h5>{{ item.langs }}</h5><p class="justified">{{ item.description }}</p></div></div>{% endfor %}</div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-publications">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Publications</h2></div><div class="col-xs-9">{% for item in site.data.cv.publications %}<div class="publication-item"><p class="justified">{{ item.citation }}</p><a href="{{ item.link }}" target="_blank" rel="noopener">DOI / Article</a></div>{% endfor %}</div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-experience">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Career</h2></div><div class="col-xs-9">{% for item in site.data.cv.career %}<div class="jd"><div class="row"><div class="col-xs-6"><h4><b>{{ item.position }}</b></h4></div><div class="col-xs-6"><h5 class="pull-right">{{ item.dates }}<br>{{ item.company }} <i>({{ item.location }})</i></h5></div></div><p class="justified">{{ item.summary }}</p>{% if item.accomplishments.size > 0 %}<b>Selected accomplishments:</b><ul>{% for itemm in item.accomplishments %}<li>{{ itemm.accomplishment }}</li>{% endfor %}</ul>{% endif %}</div>{% endfor %}</div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-skills">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Technical Skills</h2></div><div class="col-xs-9"><div class="skills-layout"><div class="skill-block"><h4><i class="fa fa-line-chart"></i> Instrumentation &amp; Modelling</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.backend %}<li>{{ item.name }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-flask"></i> Experimental &amp; Analytical Methods</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.frontend %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.completedProjects[0].skills %}<li>{{ item }}</li>{% endfor %}</ul></div><div class="skill-block"><h4><i class="fa fa-users"></i> Core Competencies</h4><ul class="skill-list">{% for item in site.data.cv.technicalSkills.other %}<li>{{ item.name }}</li>{% endfor %}{% for item in site.data.cv.technicalSkills.list %}<li>{{ item.tr }}</li>{% endfor %}</ul></div></div></div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-education">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
+  </section>
 </div>
 <script>
-(function(){const body=document.body,toggle=document.getElementById('nightToggle'),saved=localStorage.getItem('njelama-theme');if(saved==='dark')body.classList.add('dark-mode');function update(){const dark=body.classList.contains('dark-mode');toggle.querySelector('span').textContent=dark?'Day mode':'Night mode';toggle.querySelector('i').className=dark?'fa fa-sun-o':'fa fa-moon-o';localStorage.setItem('njelama-theme',dark?'dark':'light')}toggle.addEventListener('click',function(){body.classList.toggle('dark-mode');update()});update()})();
+(function(){
+  const body=document.body, nightToggle=document.getElementById('nightToggle');
+  const saved=localStorage.getItem('njelama-theme');
+  if(saved==='dark') body.classList.add('dark-mode');
+  function updateNight(){const dark=body.classList.contains('dark-mode');nightToggle.querySelector('span').textContent=dark?'Day mode':'Night mode';nightToggle.querySelector('i').className=dark?'fa fa-sun-o':'fa fa-moon-o';localStorage.setItem('njelama-theme',dark?'dark':'light')}
+  nightToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');updateNight()});
+  updateNight();
+  const buttons=document.querySelectorAll('.tab-button');
+  const panels=document.querySelectorAll('.tab-panel');
+  function openTab(name,updateUrl){buttons.forEach(btn=>btn.classList.toggle('active',btn.dataset.tab===name));panels.forEach(panel=>panel.classList.toggle('active',panel.id==='tab-'+name));if(updateUrl)history.replaceState(null,'','#'+name);window.scrollTo({top:0,behavior:'smooth'})}
+  buttons.forEach(btn=>btn.addEventListener('click',()=>openTab(btn.dataset.tab,true)));
+  const initial=(location.hash||'').replace('#','');
+  if(initial && document.getElementById('tab-'+initial)) openTab(initial,false);
+})();
 </script>
-</body></html>
+</body>
+</html>
