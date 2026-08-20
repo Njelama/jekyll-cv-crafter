@@ -1,7 +1,5 @@
 url: https://njelamasanga.site
 projectUrl: njelamasanga.site
-
-# leave blank fields which you don't want to fill/be displayed
 person:
   name: Njelama Sanga, PhD
   depiction: headshot.JPG
@@ -11,10 +9,8 @@ person:
   github: /Njelama
   linkedin: /njelama-sanga-phd-014b2739
   orcid: https://orcid.org/0009-0004-1665-310X
-
 researchInterests: >-
   My research focuses on PFAS, colloid and interface science, and water treatment, with a particular interest in translating physicochemical insights into practical remediation technologies. I am seeking postdoctoral and research or industry opportunities in PFAS remediation, analytical and physical chemistry, soft matter, and environmental treatment, with a long-term goal of developing an independent research programme in Zambia that connects fundamental chemistry with environmental remediation and scientific capacity building.
-
 career:
  - position: PhD Researcher, Polymer & Colloid Chemistry
    company: Uppsala University
@@ -36,7 +32,6 @@ career:
     - accomplishment: Designed and implemented two new practical chemistry modules, including experimental procedures and safety documentation.
     - accomplishment: Assessed assignments, tests, and examinations, and supported students in scientific problem-solving and technical report writing.
     - accomplishment: Selected for a competitive academic staff development pathway supporting future research and teaching capacity within the department.
-
 publications:
   - citation: "Sanga, N.; Ahrens, L.; Rennie, A. R. Counterion influence on perfluorooctanoate micelle characteristics: Shape, size, and interactions. Colloids and Surfaces A: Physicochemical and Engineering Aspects 2025, 726, 137912."
     link: https://doi.org/10.1016/j.colsurfa.2025.137912
@@ -46,14 +41,12 @@ publications:
     link: https://doi.org/10.1039/d6ra02082h
   - citation: "Azmi, N.; Akanno, A.; Demchenko, H.; Sanga, N.; Fossum, J. O. Comparative Analysis and Characterization of Various Extraction Techniques of Food-Grade Particles From Moringa oleifera Lam. Seeds. European Journal of Lipid Science and Technology 2025, 127(12), e70071."
     link: https://doi.org/10.1002/ejlt.70071
-
 doctoralThesis:
   title: "Self-assembly of fluorocarbon amphiphiles and their interactions at interfaces with a seed protein"
   citation: "Sanga, N. (2025). Self-assembly of fluorocarbon amphiphiles and their interactions at interfaces with a seed protein. Doctoral thesis, comprehensive summary. Uppsala: Acta Universitatis Upsaliensis. Digital Comprehensive Summaries of Uppsala Dissertations from the Faculty of Science and Technology, 2607."
   link: https://uu.diva-portal.org/smash/get/diva2:2009389/FULLTEXT01.pdf
   repository: https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-570586
   description: "Doctoral research on the physicochemical properties, self-assembly, hydration and interactions of perfluorooctanoate-based PFAS surfactants, using small-angle X-ray/neutron scattering and neutron reflection, including interactions with Moringa oleifera seed protein."
-
 researchFacilities:
   - name: "Rutherford Appleton Laboratory (RAL), UK"
     description: "Neutron-scattering research at the Rutherford Appleton Laboratory, supporting structural and interfacial studies of soft-matter and surfactant systems."
@@ -67,7 +60,6 @@ researchFacilities:
     description: "Soft-matter, colloid and interface research, including sample preparation, experimental design and data analysis."
   - name: "Ural Federal University research laboratories"
     description: "Reverse-osmosis/baromembrane filtration, water-sample concentration and isotope-focused analytical work."
-
 completedProjects:
   - name: "MSc Research — Verification of a Baromembrane Method for Concentrating Water Samples"
     dates: "2019–2021"
@@ -95,7 +87,6 @@ completedProjects:
       - "Process-oriented troubleshooting"
     outcome: "Gained early industrial experience in a production environment, connecting laboratory measurements with routine process monitoring and quality requirements."
     document: ""
-
 technicalSkills:
   list:
     - tr: "Colloid and interface science"
@@ -117,13 +108,6 @@ technicalSkills:
    - name: Laboratory techniques
    - name: Experimental troubleshooting
    - name: Radiochemical and spectrometric methods
-
-sideProjects:
-  - name: PFAS remediation concept
-    description: Research-driven concept exploring adsorption-based PFAS remediation using functionalised silica and Moringa oleifera seed protein, with a focus on practical water-treatment applications.
-    type: site
-    langs: Colloid chemistry / Water treatment
-
 education:
   - name: Uppsala University
     degree: PhD, Polymer Chemistry
