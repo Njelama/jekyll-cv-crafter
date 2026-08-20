@@ -64,6 +64,28 @@ h1, h2{
   text-align: center;
 }
 
+/* Podcast branding */
+.tab-button[data-tab="podcast"]{
+  font-size: 0;
+}
+.tab-button[data-tab="podcast"]::after{
+  content: 'Science with Njelama';
+  font-size: 14px;
+}
+.tab-button[data-tab="podcast"] i{
+  display: none;
+}
+
+.podcast-link{
+  font-weight: 600;
+}
+
+@media (max-width: 767px){
+  .tab-button[data-tab="podcast"]::after{
+    font-size: 12px;
+  }
+}
+
 @media print {
   .section {
     page-break-inside: avoid;
