@@ -64,6 +64,71 @@ h1, h2{
   text-align: center;
 }
 
+/* Science with Njelama branding */
+.tab-button[data-tab="podcast"]{
+  font-size: 0;
+}
+.tab-button[data-tab="podcast"]::after{
+  content: 'Science with Njelama';
+  font-size: 14px;
+}
+.tab-button[data-tab="podcast"] i{
+  display: none;
+}
+
+.header li:has(a[href*="open.spotify.com"]) i.fa-spotify{
+  display: none;
+}
+.header li:has(a[href*="open.spotify.com"]) a{
+  font-size: 0;
+}
+.header li:has(a[href*="open.spotify.com"]) a::after{
+  content: 'Science with Njelama';
+  font-size: 14px;
+}
+
+#tab-podcast .podcast-card h4{
+  font-size: 0;
+}
+#tab-podcast .podcast-card h4::after{
+  content: 'Science with Njelama';
+  font-size: 20px;
+}
+#tab-podcast .podcast-card p{
+  font-size: 0;
+}
+#tab-podcast .podcast-card p::after{
+  content: 'A passion project discussing women in different spheres of science, their journeys and lessons, and sharing stories to inspire young women to see themselves in science and pursue their own paths.';
+  display: block;
+  font-size: 16px;
+  line-height: 1.6;
+}
+#tab-podcast .podcast-link{
+  font-size: 0;
+}
+#tab-podcast .podcast-link::after{
+  content: 'Listen to Science with Njelama on Spotify';
+  font-size: 14px;
+}
+
+@media (max-width: 767px){
+  .tab-button[data-tab="podcast"]::after{
+    font-size: 12px;
+  }
+  .header li:has(a[href*="open.spotify.com"]) a::after{
+    font-size: 13px;
+  }
+  #tab-podcast .podcast-card h4::after{
+    font-size: 18px;
+  }
+  #tab-podcast .podcast-card p::after{
+    font-size: 15px;
+  }
+  #tab-podcast .podcast-link::after{
+    font-size: 13px;
+  }
+}
+
 @media print {
   .section {
     page-break-inside: avoid;
