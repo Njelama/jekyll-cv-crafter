@@ -14,27 +14,52 @@
   <style>
     :root{--bg:#fff;--text:#333;--muted:#666;--panel:#f3f3f3;--border:#ddd;--accent:#5bc0de}
     body{background:var(--bg);color:var(--text);transition:background .25s,color .25s}
-    .cv-download{margin-top:14px}.cv-download a{display:inline-block;padding:10px 16px;background:#5bc0de;color:#fff;border-radius:4px;text-decoration:none}.cv-download a:hover{background:#46b8da;color:#fff;text-decoration:none}
     .profile-photo-wrap{display:flex;justify-content:center;align-items:flex-start;padding:10px 0 5px}.profile-photo{width:auto;height:260px;max-width:100%;object-fit:contain;border-radius:8px;display:block}
     .justified{text-align:justify;line-height:1.6}.publication-item,.completed-project,.thesis-box,.jd,.facility-item{line-height:1.55}.publication-item{margin-bottom:15px}
     .project-skill{display:inline-block;margin:0 6px 6px 0;padding:5px 9px;border:1px solid #d9d9d9;border-radius:4px;font-size:13px;background:#fafafa}
-    .thesis-link{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none}.thesis-link:hover{background:#5bc0de;color:#fff;text-decoration:none}
+    .thesis-link,.podcast-link{display:inline-block;margin-top:8px;padding:9px 14px;border:1px solid #5bc0de;border-radius:4px;color:#46b8da;text-decoration:none}.thesis-link:hover,.podcast-link:hover{background:#5bc0de;color:#fff;text-decoration:none}
     .thesis-cover{display:block;width:220px;max-width:100%;margin:0 auto 18px;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
     .orcid-icon{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-right:5px;border-radius:50%;background:#a6ce39;color:#fff;font-size:11px;font-weight:700;font-family:Arial,sans-serif;vertical-align:-3px;letter-spacing:-.5px}
     .skills-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.skill-block h4{margin:0 0 9px}.skill-list{margin:0;padding-left:20px}.skill-list li{margin-bottom:7px}
     .night-toggle{position:fixed;top:18px;right:18px;z-index:1000;border:1px solid #aaa;background:#fff;color:#333;border-radius:18px;padding:7px 12px;cursor:pointer;font-size:12px}.night-toggle i{margin-right:5px}
     .dark-mode{--bg:#141414;--text:#e8e8e8;--muted:#bdbdbd;--panel:#202020;--border:#444}.dark-mode .bg-gray,.dark-mode .section-border{background:#202020!important;border-color:#444!important}.dark-mode a{color:#7ed7f2}.dark-mode .project-skill{background:#242424;border-color:#555;color:#eee}.dark-mode .night-toggle{background:#242424;color:#eee;border-color:#666}.dark-mode h1,.dark-mode h2,.dark-mode h3,.dark-mode h4,.dark-mode h5,.dark-mode p,.dark-mode li,.dark-mode span{color:inherit}
     .tab-nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:900;background:var(--bg)}
-    .tab-button{border:0;background:transparent;color:var(--text);padding:11px 15px;font-family:'Roboto Slab',serif;font-size:14px;border-bottom:3px solid transparent;cursor:pointer}.tab-button:hover{color:#46b8da}.tab-button.active{border-bottom-color:#5bc0de;color:#46b8da;font-weight:700}
+    .tab-button{border:0;background:transparent;color:var(--text);padding:11px 15px;font-family:'Roboto Slab',serif;font-size:14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}.tab-button:hover{color:#46b8da}.tab-button.active{border-bottom-color:#5bc0de;color:#46b8da;font-weight:700}
     .tab-panel{display:none}.tab-panel.active{display:block}.tab-intro{margin-bottom:18px}
-    @media(max-width:767px){.profile-photo{height:auto;width:180px;max-height:280px}.header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;text-align:center}.header .col-xs-3 ul{text-align:left;display:inline-block}.name,.profession{text-align:center}.profession{display:block}.cv-download{text-align:center}.skills-layout{grid-template-columns:1fr}.night-toggle{top:10px;right:10px}.thesis-cover{width:190px}.justified{text-align:justify}.tab-nav{gap:2px}.tab-button{font-size:12px;padding:9px 10px}}
+    .podcast-card{padding:18px 20px;background:var(--panel);border:1px solid var(--border);border-radius:8px}.spotify-icon{color:#1db954;font-size:20px;margin-right:7px}
+    @media(max-width:767px){
+      body{font-size:15px}
+      .container{width:100%;padding:0 10px;margin:15px 0}
+      .header{padding:28px 16px 18px!important}
+      .profile-photo{height:auto;width:165px;max-height:240px}
+      .header .col-xs-4,.header .col-md-5,.header .col-xs-3{width:100%;float:none;text-align:center}
+      .header .col-xs-3 ul{display:inline-block;text-align:left;margin:12px auto 0}
+      .name{font-size:30px!important;line-height:1.15;text-align:center;margin-top:0}
+      .profession{display:block;text-align:center;font-size:18px!important;line-height:1.35}
+      .night-toggle{top:8px;right:8px;padding:6px 9px}
+      .tab-nav{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:0;margin:0 -10px 12px;padding:0 8px;position:sticky;top:0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+      .tab-nav::-webkit-scrollbar{display:none}
+      .tab-button{flex:0 0 auto;font-size:12px;padding:10px 11px}
+      .row.section{margin-left:0;margin-right:0;padding:18px 12px!important}
+      .row.section>.col-xs-3,.row.section>.col-xs-9{width:100%;float:none;padding-left:0;padding-right:0}
+      .row.section>.col-xs-3 h2{font-size:22px;margin:0 0 12px;line-height:1.2}
+      .row.section>.col-xs-9{font-size:14px}
+      .jd .row>.col-xs-6{width:100%;float:none;padding-left:0;padding-right:0}
+      .jd h5.pull-right{float:none!important;text-align:left;margin-top:4px}
+      .skills-layout{grid-template-columns:1fr;gap:18px}
+      .thesis-cover{width:170px;margin-bottom:16px}
+      .thesis-box h4{font-size:18px;line-height:1.3}
+      .justified{text-align:left;line-height:1.55}
+      .project-skill{font-size:12px;padding:4px 8px}
+      .podcast-card{padding:16px}
+    }
   </style>
 </head>
 <body>
 <button id="nightToggle" class="night-toggle" type="button" aria-label="Toggle night mode"><i class="fa fa-moon-o"></i><span>Night mode</span></button>
 <div class="container">
   <div class="row header bg-gray">
-    <div class="col-xs-4"><h1 class="name">{{ site.data.cv.person.name }}</h1><span class="profession">{{ site.data.cv.person.profession }}</span><div class="cv-download"><a href="{{ '/Njelama_Sanga_CV.pdf' | relative_url }}" download><i class="fa fa-download"></i> Download CV</a></div></div>
+    <div class="col-xs-4"><h1 class="name">{{ site.data.cv.person.name }}</h1><span class="profession">{{ site.data.cv.person.profession }}</span></div>
     <div class="col-md-5 text-center profile-photo-wrap"><img src="{{ '/Headshot.JPG' | relative_url }}" alt="{{ site.data.cv.person.name }}'s Photo" class="img-rounded profile-photo"></div>
     <div class="col-xs-3"><ul class="list-unstyled">
       {% if site.data.cv.person.citizenship %}<li><i class="fa fa-flag-o"></i> {{ site.data.cv.person.citizenship }}</li>{% endif %}
@@ -42,6 +67,7 @@
       {% if site.data.cv.person.github %}<li><i class="fa fa-github"></i> <a href="https://github.com{{ site.data.cv.person.github }}">GitHub</a></li>{% endif %}
       {% if site.data.cv.person.linkedin %}<li><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in{{ site.data.cv.person.linkedin }}">LinkedIn</a></li>{% endif %}
       {% if site.data.cv.person.orcid %}<li><span class="orcid-icon" aria-hidden="true">iD</span><a href="{{ site.data.cv.person.orcid }}">ORCID</a></li>{% endif %}
+      <li><i class="fa fa-spotify spotify-icon"></i> <a href="https://open.spotify.com/episode/7EZEt5XW73Tgwo6agnZ77M?si=Yetw9yBaS4OYri4nT0BWlA&amp;utm_source=copy-link" target="_blank" rel="noopener">Podcast</a></li>
     </ul></div>
   </div>
 
@@ -52,6 +78,7 @@
     <button class="tab-button" data-tab="experience"><i class="fa fa-briefcase"></i> Experience</button>
     <button class="tab-button" data-tab="skills"><i class="fa fa-cogs"></i> Skills</button>
     <button class="tab-button" data-tab="education"><i class="fa fa-graduation-cap"></i> Education</button>
+    <button class="tab-button" data-tab="podcast"><i class="fa fa-spotify"></i> Podcast</button>
   </nav>
 
   <section class="tab-panel active" id="tab-home">
@@ -61,7 +88,7 @@
   </section>
 
   <section class="tab-panel" id="tab-research">
-    <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><img class="thesis-cover" src="{{ '/thesis-cover-front.svg' | relative_url }}" alt="Cover of Njelama Sanga's doctoral thesis"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
+    <div class="row section section-border"><div class="col-xs-3"><h2>Doctoral Thesis</h2></div><div class="col-xs-9"><div class="thesis-box"><img class="thesis-cover" src="{{ '/assets/thesis-cover.svg' | relative_url }}" alt="Cover of Njelama Sanga's doctoral thesis"><h4><b>{{ site.data.cv.doctoralThesis.title }}</b></h4><p class="justified">{{ site.data.cv.doctoralThesis.citation }}</p><p class="justified">{{ site.data.cv.doctoralThesis.description }}</p><a class="thesis-link" href="https://uu.diva-portal.org/smash/record.jsf?pid=diva2:2009389" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View thesis on Uppsala DiVA</a></div></div></div>
     <div class="row section section-border"><div class="col-xs-3"><h2>Research Facilities &amp; Neutron Training</h2></div><div class="col-xs-9">{% for item in site.data.cv.researchFacilities %}<div class="facility-item"><h4><i class="fa fa-flask"></i> <b>{{ item.name }}</b></h4><p class="justified">{{ item.description }}</p></div>{% endfor %}</div></div>
     <div class="row section section-border"><div class="col-xs-3"><h2>Completed Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.completedProjects %}<div class="completed-project"><h4><b>{{ item.name }}</b></h4><p><b>{{ item.institution }}</b> ({{ item.dates }})</p><p class="justified">{{ item.description }}</p><p class="justified"><b>Outcome:</b> {{ item.outcome }}</p><p><b>Methods &amp; skills:</b><br>{% for skill in item.skills %}<span class="project-skill">{{ skill }}</span>{% endfor %}</p></div>{% endfor %}</div></div>
     <div class="row section section-border"><div class="col-xs-3"><h2>Research Projects</h2></div><div class="col-xs-9">{% for item in site.data.cv.sideProjects %}<div class="row side-project"><div class="col-xs-12"><h4><i class="fa fa-flask"></i> {{ item.name }}</h4><h5>{{ item.langs }}</h5><p class="justified">{{ item.description }}</p></div></div>{% endfor %}</div></div>
@@ -82,6 +109,10 @@
   <section class="tab-panel" id="tab-education">
     <div class="row section section-border"><div class="col-xs-3"><h2>Education</h2></div><div class="col-xs-9">{% for item in site.data.cv.education %}<div class="row"><div class="col-xs-12"><h4><b>{{ item.name }}</b></h4></div><div class="col-xs-12">{{ item.degree }} ({{ item.dates }})</div><div class="col-xs-12"><a href="{{ item.link }}">{{ item.link }}</a>, {{ item.location }}</div></div>{% endfor %}</div></div>
     <div class="row section section-border"><div class="col-xs-3"><h2>Languages</h2></div><div class="col-xs-9">English (fluent), Russian (basic), Swedish (basic)</div></div>
+  </section>
+
+  <section class="tab-panel" id="tab-podcast">
+    <div class="row section section-border"><div class="col-xs-3"><h2>Podcast</h2></div><div class="col-xs-9"><div class="podcast-card"><h4><i class="fa fa-spotify spotify-icon"></i> Featured podcast episode</h4><p class="justified">I recently took part in a podcast conversation sharing my experiences and perspectives as a scientist. Listen to the episode on Spotify.</p><a class="podcast-link" href="https://open.spotify.com/episode/7EZEt5XW73Tgwo6agnZ77M?si=Yetw9yBaS4OYri4nT0BWlA&amp;utm_source=copy-link" target="_blank" rel="noopener"><i class="fa fa-spotify"></i> Listen on Spotify</a></div></div></div>
   </section>
 </div>
 <script>
