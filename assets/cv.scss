@@ -146,7 +146,40 @@ h1, h2{
   .thesis-box h4{font-size:18px;line-height:1.35;}
   .project-skill{font-size:12px;padding:5px 8px;}
   .podcast-card{padding:16px;}
-  .night-toggle{top:auto;right:12px;bottom:14px;padding:8px 12px;font-size:13px;border-radius:20px;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+
+  /* Mobile: keep Day/Night mode as a compact horizontal button. */
+  .night-toggle,
+  #nightToggle{
+    position:fixed!important;
+    top:8px!important;
+    right:8px!important;
+    bottom:auto!important;
+    left:auto!important;
+    width:max-content!important;
+    min-width:0!important;
+    max-width:calc(100vw - 16px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:6px 10px!important;
+    margin:0!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex:none!important;
+    box-sizing:border-box!important;
+    border-radius:18px!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+    writing-mode:horizontal-tb!important;
+    text-orientation:mixed!important;
+    transform:none!important;
+    overflow:visible!important;
+    z-index:2000!important;
+  }
+  .night-toggle i,
+  #nightToggle i{margin-right:5px!important;}
+
   .header li:has(a[href*="open.spotify.com"]) a::after{font-size:13px;}
   #tab-podcast .podcast-card h4::after{font-size:18px;}
   #tab-podcast .podcast-card p::after{font-size:15px;}
