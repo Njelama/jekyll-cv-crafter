@@ -37,8 +37,12 @@ career:
 publications:
   - citation: "Sanga, N.; Ahrens, L.; Rennie, A. R. Counterion influence on perfluorooctanoate micelle characteristics: Shape, size, and interactions. Colloids and Surfaces A: Physicochemical and Engineering Aspects 2025, 726, 137912."
     link: https://doi.org/10.1016/j.colsurfa.2025.137912
+    image: /assets/publications/colloids-surfaces-a-2025-fig5.svg
+    image_alt: "Schematic from Figure 5 showing cylinder and prolate ellipsoid models for a perfluorooctanoate micelle"
   - citation: "Sanga, N.; Croy, N.; Ahrens, L.; Welbourn, R. J. L.; Rennie, A. R. Interaction of Perfluorooctanoate and Perfluorohexanoate with Moringa oleifera Seed Protein. Langmuir 2025, 41(25), 16500–16505."
     link: https://doi.org/10.1021/acs.langmuir.5c01879
+    image: /assets/publications/langmuir-2025-graphical-abstract.svg
+    image_alt: "Graphical abstract showing Moringa seed protein on silica, sodium PFOA adsorption, and rinsing with water"
   - citation: "Sanga, N.; Ahrens, L.; Smith, G. N.; Rennie, A. R. Influence of magnesium on the structure and hydration of perfluorooctanoate micelles – comparison with sodium salt. RSC Advances 2026."
     link: https://doi.org/10.1039/d6ra02082h
     image: /assets/publications/rsc-advances-2026-micelle-schematic.svg
