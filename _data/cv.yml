@@ -10,7 +10,9 @@ person:
   linkedin: /njelama-sanga-phd-014b2739
   orcid: https://orcid.org/0009-0004-1665-310X
 researchInterests: >-
-  My research focuses on PFAS, colloid and interface science, and water treatment, with a particular interest in translating physicochemical insights into practical remediation technologies. I am seeking postdoctoral, research, and industry opportunities in PFAS remediation, analytical and physical chemistry, soft matter, and environmental treatment. My work also has relevance to industrial water-treatment challenges such as scale control, corrosion-related water chemistry, and cooling-water systems, where understanding surfactant, colloid, and interface behaviour can support more effective process control. My long-term goal is to develop an independent research programme in Zambia connecting fundamental chemistry with environmental remediation and scientific capacity building.
+  My research focuses on PFAS, colloid and interface science, and water treatment, with a particular interest in translating physicochemical insights into practical remediation technologies. I am seeking postdoctoral and research or industry opportunities in PFAS remediation, analytical and physical chemistry, soft matter, and environmental treatment, with a long-term goal of developing an independent research programme in Zambia that connects fundamental chemistry with environmental remediation and scientific capacity building. My work also has relevance to industrial water-treatment challenges involving scale control, corrosion-related water chemistry, cooling-water systems, and the optimisation of separation and monitoring processes.
+currentStatus: >-
+  Currently open to postdoctoral, research and industry opportunities in PFAS remediation, water treatment, colloid and interface science, analytical chemistry and related industrial applications.
 career:
  - position: PhD Researcher, Polymer & Colloid Chemistry
    company: Uppsala University
@@ -20,8 +22,8 @@ career:
    accomplishments:
     - accomplishment: Investigated interfacial interactions between fluorinated surfactants and Moringa oleifera seed protein systems using neutron reflectometry.
     - accomplishment: Planned and coordinated 8+ experimental campaigns at international neutron scattering facilities, collaborating with multidisciplinary research teams across multiple countries.
-    - accomplishment: Interpreted complex scattering and interfacial datasets to identify structure, hydration, aggregation and interaction behaviour, contributing to peer-reviewed publications and conference presentations.
-    - accomplishment: Optimised experimental workflows and measurement conditions, reducing sample preparation time by approximately 40% through workflow redesign and systematic troubleshooting.
+    - accomplishment: Performed experimental troubleshooting, uncertainty evaluation, and optimisation of measurement conditions, reducing sample preparation time by approximately 40% through workflow redesign.
+    - accomplishment: Interpreted complex experimental datasets and translated findings into scientific conclusions, technical reports, peer-reviewed publications, and conference presentations.
  - position: Staff Development Fellow, Department of Chemistry
    company: University of Zambia
    location: Zambia
@@ -29,9 +31,9 @@ career:
    summary: On leave for doctoral studies during 2021–2025; undergraduate teaching and academic capacity development.
    accomplishments:
     - accomplishment: Delivered laboratory demonstrations and tutorials in Physical Chemistry and first-year general chemistry to undergraduate cohorts of 120+ students.
-    - accomplishment: Designed and implemented two new practical chemistry modules, including experimental procedures, assessment activities and safety documentation.
+    - accomplishment: Designed and implemented two new practical chemistry modules, including experimental procedures and safety documentation.
     - accomplishment: Assessed assignments, tests, and examinations, and supported students in scientific problem-solving and technical report writing.
-    - accomplishment: Contributed to departmental academic capacity development through teaching support, practical laboratory delivery and a competitive staff-development pathway.
+    - accomplishment: Selected for a competitive academic staff development pathway supporting future research and teaching capacity within the department.
 publications:
   - citation: "Sanga, N.; Ahrens, L.; Rennie, A. R. Counterion influence on perfluorooctanoate micelle characteristics: Shape, size, and interactions. Colloids and Surfaces A: Physicochemical and Engineering Aspects 2025, 726, 137912."
     link: https://doi.org/10.1016/j.colsurfa.2025.137912
@@ -39,6 +41,8 @@ publications:
     link: https://doi.org/10.1021/acs.langmuir.5c01879
   - citation: "Sanga, N.; Ahrens, L.; Smith, G. N.; Rennie, A. R. Influence of magnesium on the structure and hydration of perfluorooctanoate micelles – comparison with sodium salt. RSC Advances 2026."
     link: https://doi.org/10.1039/d6ra02082h
+    image: /assets/publications/rsc-advances-2026-micelle-schematic.svg
+    image_alt: "Schematic comparison of magnesium and sodium perfluorooctanoate micelles, adapted from Figure 7"
   - citation: "Azmi, N.; Akanno, A.; Demchenko, H.; Sanga, N.; Fossum, J. O. Comparative Analysis and Characterization of Various Extraction Techniques of Food-Grade Particles From Moringa oleifera Lam. Seeds. European Journal of Lipid Science and Technology 2025, 127(12), e70071."
     link: https://doi.org/10.1002/ejlt.70071
 doctoralThesis:
@@ -69,6 +73,7 @@ completedProjects:
       - "Reverse osmosis and baromembrane filtration"
       - "Water sample preparation and concentration"
       - "Stable and radioactive isotope handling"
+      - "Mass spectrometry"
       - "Conductivity measurements"
       - "Concentration and demineralisation coefficient calculations"
       - "Experimental optimisation and troubleshooting"
@@ -88,26 +93,25 @@ completedProjects:
     document: ""
 technicalSkills:
   list:
-    - tr: "Experimental design and optimisation"
+    - tr: "Colloid and interface science"
+    - tr: "PFAS chemistry and surfactant self-assembly"
+    - tr: "Experimental design, optimisation and troubleshooting"
+    - tr: "Scientific writing, technical reporting and presentations"
     - tr: "Quantitative data analysis and interpretation"
-    - tr: "Scientific writing and technical reporting"
-    - tr: "Multidisciplinary collaboration"
-    - tr: "Teaching and student support"
+    - tr: "Undergraduate teaching and student supervision"
   backend:
    - name: SasView / quantitative modelling
    - name: Data analysis
   frontend:
    - name: SANS / SAXS
    - name: Neutron reflectometry
+   - name: Mass spectrometry
    - name: Conductivity measurements
-   - name: Reverse osmosis / baromembrane filtration
-   - name: Water sample preparation and concentration
-   - name: Radiochemical and spectrometric methods
-   - name: Laboratory techniques
   other:
-   - name: PFAS chemistry and surfactant self-assembly
-   - name: Colloid and interface science
+   - name: Reverse osmosis / baromembrane filtration
+   - name: Laboratory techniques
    - name: Experimental troubleshooting
+   - name: Radiochemical and spectrometric methods
 education:
   - name: Uppsala University
     degree: PhD, Polymer Chemistry
